@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish docs to confluence
     steps:
-    - uses: actions/checkout@v1
-    - name: publish to confluence
-      uses: pratikmallya/publish-confluence@master
-      with:
-        username: ${{ secrets.CONFLUENCE_USERNAME }}
-        apitoken: ${{ secrets.CONFLUENCE_PASSWORD }}
+      - uses: actions/checkout@v1
+      - name: publish to confluence
+        uses: simasbu/confluence-page-creator-action@main
+        with:
+          miliseconds: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
