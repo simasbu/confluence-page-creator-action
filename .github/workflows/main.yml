@@ -12,5 +12,4 @@ jobs:
       - name: publish to confluence
         uses: simasbu/confluence-page-creator-action@main
         with:
-          miliseconds: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
