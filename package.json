@@ -1,24 +1,24 @@
 {
-    "name": "confluence-page-creator-action",
-    "version": "1.0.0",
-    "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
-    "main": "dist/index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/simasbu/confluence-page-creator-action.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/simasbu/confluence-page-creator-action/issues"
-    },
-    "homepage": "https://github.com/simasbu/confluence-page-creator-action#readme",
-    "dependencies": {
-      "@actions/core": "^1.1.0",
-      "@actions/github": "^1.1.0"
-    }
+  "name": "confluence-page-creator-action",
+  "version": "1.0.0",
+  "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simasbu/confluence-page-creator-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simasbu/confluence-page-creator-action/issues"
+  },
+  "homepage": "https://github.com/simasbu/confluence-page-creator-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0"
   }
+}
