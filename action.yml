@@ -1,0 +1,14 @@
+name: "Deploy markdown files to Confluence"
+description: "Deploy markdown files to Confluence based on your parameters"
+author: "Simonas Bunevicius"
+inputs:
+  who-to-greet: # id of input
+    description: "Who to greet"
+    required: true
+    default: "World"
+outputs:
+  time: # id of output
+    description: "The time we greeted you"
+runs:
+  using: "node12"
+  main: "dist/index.js"
