@@ -19,8 +19,8 @@ jobs:
         with:
           token: ${{ secrets.GIT_TOKEN }}
           directory: "confluence"
-          parentPageTitle: "Delivery and Service Management Home"
-          spaceKey: "sibunpppppp"
+          parentPageTitle: "Delivery and Service Management Test"
+          spaceKey: "DSM"
 
       # Maven package
       - name: Setup JDK
