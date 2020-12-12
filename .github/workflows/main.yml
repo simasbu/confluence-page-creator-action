@@ -13,3 +13,4 @@ jobs:
         uses: simasbu/confluence-page-creator-action@main
         with:
           token: ${{ secrets.GIT_TOKEN }}
+          directory: "confluence"
