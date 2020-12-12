@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.test.dsm</groupId>
+	<artifactId>confluence</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Test-Confluence-Builder</name>
+	<description>A test repo to generation Atlasian Confluence pages out of Markdown files and publishes them.</description>
+
+	<properties>
+		<java.version>11</java.version>
+		<maven-confluence-plugin.version>6.8</maven-confluence-plugin.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>confluence-reporting-maven-plugin</artifactId>
+				<version>${maven-confluence-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.bsc.maven</groupId>
+						<artifactId>confluence-markdown-processor-commonmark</artifactId>
+						<version>${maven-confluence-plugin.version}</version>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<siteDescriptor>${basedir}/site.yaml</siteDescriptor>
+					<markdownProcessor>
+						<name>commonmark</name>
+					</markdownProcessor>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

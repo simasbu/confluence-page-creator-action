@@ -22,5 +22,11 @@ jobs:
           parentPageTitle: "Delivery and Service Management Home"
           spaceKey: "UNIOPGAVER"
 
+      # Maven package
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
+
       - name: Publish
         run: mvn confluence-reporting:deploy -Dconfluence.endPoint=$CONFLUENCE_UENDPOINT -Dconfluence.userName=$CONFLUENCE_USERNAME -Dconfluence.password=$CONFLUENCE_PASSWORD -Dconfluence.childrenTitlesPrefixed=false
