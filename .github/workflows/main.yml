@@ -29,4 +29,4 @@ jobs:
           java-version: 13
 
       - name: Publish
-        run: mvn confluence-reporting:deploy -Dconfluence.endPoint=$CONFLUENCE_UENDPOINT -Dconfluence.userName=$CONFLUENCE_USERNAME -Dconfluence.password=$CONFLUENCE_PASSWORD -Dconfluence.childrenTitlesPrefixed=false
+        run: mvn confluence-reporting:deploy -Dconfluence.endPoint=$CONFLUENCE_ENDPOINT -Dconfluence.userName=$CONFLUENCE_USERNAME -Dconfluence.password=$CONFLUENCE_PASSWORD -Dconfluence.childrenTitlesPrefixed=false
