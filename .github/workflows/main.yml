@@ -2,6 +2,11 @@
 
 name: CI
 
+env:
+  CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
+  CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_PASSWORD }}
+  CONFLUENCE_ENDPOINT: ${{ secrets.CONFLUENCE_ENDPOINT }}
+
 on: [pull_request]
 jobs:
   publish_confluence:
@@ -9,9 +14,12 @@ jobs:
     name: Publish docs to confluence
     steps:
       - uses: actions/checkout@v1
-      - name: publish to confluence
+      - name: Generate site.yaml
         uses: simasbu/confluence-page-creator-action@main
         with:
           token: ${{ secrets.GIT_TOKEN }}
           directory: "confluence"
           parentPageTitle: "Delivery and Service Management Home"
+
+      - name: Publish
+        run: mvn confluence-reporting:deploy -Dconfluence.endPoint=$CONFLUENCE_UENDPOINT -Dconfluence.userName=$CONFLUENCE_USERNAME -Dconfluence.password=$CONFLUENCE_PASSWORD -Dconfluence.childrenTitlesPrefixed=false
