@@ -19,7 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GIT_TOKEN }}
           directory: "confluence"
-          parentPageTitle: "Delivery and Service Management Test"
+          parentPageTitle: "Delivery and Service Management Home"
           spaceKey: "DSM"
 
       # Maven package
