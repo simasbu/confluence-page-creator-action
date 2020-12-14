@@ -18,8 +18,8 @@ jobs:
         uses: simasbu/confluence-page-creator-action@main
         with:
           localDirectory: "confluence"
-          parentPageTitle: "📦_Products"
-          homePageTitle: "Test_product"
+          parentPageTitle: "Test"
+          homePageTitle: "Test_product_1"
           spaceKey: "DSM"
 
       # Maven package
