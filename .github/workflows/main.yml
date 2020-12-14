@@ -17,9 +17,9 @@ jobs:
       - name: Generate site.yaml
         uses: simasbu/confluence-page-creator-action@main
         with:
-          token: ${{ secrets.GIT_TOKEN }}
-          directory: "confluence"
-          parentPageTitle: "Test"
+          localDirectory: "confluence"
+          parentPageTitle: "📦_Products"
+          homePageTitle: "Test_product"
           spaceKey: "DSM"
 
       # Maven package
