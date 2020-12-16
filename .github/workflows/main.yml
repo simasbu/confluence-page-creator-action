@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Generate site.yaml
-        uses: simasbu/confluence-page-creator-action@main
+        uses: simasbu/confluence-site-descriptor-action@main
         with:
           localDirectory: "confluence"
           parentPageTitle: "Test"
