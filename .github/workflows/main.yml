@@ -2,15 +2,31 @@
 
 name: CI
 
-on: [push]
+env:
+  CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
+  CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_PASSWORD }}
+  CONFLUENCE_ENDPOINT: "https://confluence.build.ingka.ikea.com/rest/api"
+
+on: [pull_request]
 jobs:
   publish_confluence:
     runs-on: ubuntu-latest
     name: Publish docs to confluence
     steps:
       - uses: actions/checkout@v1
-      - name: publish to confluence
-        uses: simasbu/confluence-page-creator-action@main
+      - name: Generate site.yaml
+        uses: simasbu/confluence-site-descriptor-action@main
         with:
-          miliseconds: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
+          localDirectory: "confluence"
+          parentPageTitle: "Test Home"
+          homePageTitle: "Test product 99"
+          spaceKey: "DSM"
+
+      # Maven package
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
+
+      - name: Publish
+        run: mvn confluence-reporting:deploy -Dconfluence.endPoint=$CONFLUENCE_ENDPOINT -Dconfluence.userName=$CONFLUENCE_USERNAME -Dconfluence.password=$CONFLUENCE_PASSWORD -Dconfluence.childrenTitlesPrefixed=false
