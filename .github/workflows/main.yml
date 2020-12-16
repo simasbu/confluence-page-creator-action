@@ -19,7 +19,7 @@ jobs:
         with:
           localDirectory: "confluence"
           parentPageTitle: "Test Home"
-          homePageTitle: "Test product 1"
+          homePageTitle: "Test product 99"
           spaceKey: "DSM"
 
       # Maven package
