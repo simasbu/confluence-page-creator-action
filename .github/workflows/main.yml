@@ -18,8 +18,8 @@ jobs:
         uses: simasbu/confluence-site-descriptor-action@main
         with:
           localDirectory: "confluence"
-          parentPageTitle: "Test"
-          homePageTitle: "Test_product_1"
+          parentPageTitle: "Test Home"
+          homePageTitle: "Test product 1"
           spaceKey: "DSM"
 
       # Maven package
